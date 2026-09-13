@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tracker — Personal Finance</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+  <header class="tracker-header">
+
+    <div class="tracker-header__inner">
+
+      <!-- Logo -->
+      <a href="#" class="tracker-header__brand">
+        <span class="tracker-header__logo">
+          T
+        </span>
+
+        <span class="tracker-header__brand-name">
+          tracker
+        </span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="tracker-header__nav" aria-label="Navigasi utama">
+        <a href="#overview">Overview</a>
+        <a href="#transaction-form">Add Transaction</a>
+        <a href="#transactions">History</a>
+      </nav>
+
+      <!-- Greeting -->
+      <div class="tracker-header__greeting">
+        Halo, <strong>Fenny</strong>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+    <!-- =========================================================
+         HERO SECTION
+         ========================================================= -->
+    <section class="tracker-hero">
+
+      <!-- Ambient Background Glow -->
+      <div class="tracker-hero__glow tracker-hero__glow--one" aria-hidden="true"></div>
+      <div class="tracker-hero__glow tracker-hero__glow--two" aria-hidden="true"></div>
+
+      <div class="tracker-hero__inner">
+
+        <!-- Hero Text -->
+        <div class="tracker-hero__content">
+
+          <span class="tracker-section-label">
+            PERSONAL FINANCE
+          </span>
+
+          <h1 class="tracker-hero__title">
+            Your money,
+            <br>
+            <em>your story.</em>
+          </h1>
+
+          <p class="tracker-hero__description">
+            Kelola pemasukan dan pengeluaran dengan cara
+            yang lebih sederhana, terorganisir, dan bermakna.
+          </p>
+
+          <a href="#transaction-form" class="tracker-hero__button">
+            <span>Tambah Transaksi</span>
+            <span class="tracker-hero__button-arrow">↗</span>
+          </a>
+
+        </div>
+
+
+        <!-- Hero Visual Stage (Centerpiece Balance Card + Floating 3D Elements) -->
+        <div class="tracker-hero__stage" id="heroStage">
+
+          <!-- Background Orbits -->
+          <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
+          <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
+
+          <!-- Floating 3D Banknote (Top Left) -->
+          <img
+            src="assets/uang-kertas.png"
+            class="hero-money hero-money--one"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <!-- Floating Growth Analytics Badge (Top Right) -->
+          <div class="hero-chart-card" aria-hidden="true">
+            <div class="hero-chart-card__top">
+              <span>GROWTH</span>
+              <strong>+24.8%</strong>
+            </div>
+
+            <svg
+              class="hero-chart"
+              viewBox="0 0 360 180"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="chartGradient"
+                  x1="0"
+                  y1="0"
+                  x2="360"
+                  y2="0"
+                >
+                  <stop offset="0%" stop-color="#CDE0E1"/>
+                  <stop offset="100%" stop-color="#008292"/>
+                </linearGradient>
+
+                <linearGradient
+                  id="chartArea"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="180"
+                >
+                  <stop
+                    offset="0%"
+                    stop-color="#008292"
+                    stop-opacity=".22"
+                  />
+                  <stop
+                    offset="100%"
+                    stop-color="#008292"
+                    stop-opacity="0"
+                  />
+                </linearGradient>
+              </defs>
+
+              <path
+                d="M10 145H350"
+                stroke="white"
+                stroke-opacity=".08"
+              />
+              <path
+                d="M10 105H350"
+                stroke="white"
+                stroke-opacity=".08"
+              />
+              <path
+                d="M10 65H350"
+                stroke="white"
+                stroke-opacity=".08"
+              />
+
+              <path
+                class="chart-area"
+                d="M10 140
+                   C45 132 55 120 82 126
+                   C110 132 122 92 150 98
+                   C177 104 190 112 212 82
+                   C235 52 250 72 270 55
+                   C290 38 310 46 350 18
+                   L350 170
+                   L10 170
+                   Z"
+                fill="url(#chartArea)"
+              />
+
+              <path
+                class="chart-line"
+                d="M10 140
+                   C45 132 55 120 82 126
+                   C110 132 122 92 150 98
+                   C177 104 190 112 212 82
+                   C235 52 250 72 270 55
+                   C290 38 310 46 350 18"
+                stroke="url(#chartGradient)"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+              <circle
+                class="chart-dot"
+                cx="350"
+                cy="18"
+                r="7"
+                fill="#CDE0E1"
+              />
+
+              <circle
+                class="chart-dot-glow"
+                cx="350"
+                cy="18"
+                r="14"
+                fill="#008292"
+                fill-opacity=".25"
+              />
+            </svg>
+
+            <div class="hero-chart-card__bottom">
+              <span>Jan</span>
+              <span>Feb</span>
+              <span>Mar</span>
+              <span>Apr</span>
+              <span>May</span>
+            </div>
+          </div>
+
+          <!-- Small Floating Gold Coin (Top Right Edge) -->
+          <div class="hero-coin-small" aria-hidden="true">
+            $
+          </div>
+
+          <!-- Main Interactive Balance Card (The Centerpiece) -->
+          <div class="tracker-balance-card" id="heroBalanceCard">
+
+            <div class="tracker-balance-card__top">
+              <span class="tracker-balance-card__label">
+                TOTAL BALANCE
+              </span>
+              <span class="tracker-balance-card__icon">
+                ↗
+              </span>
+            </div>
+
+            <div class="tracker-balance-card__amount">
+              <span class="tracker-summary__balance-amount tracker-hero__balance-amount">
+                Rp 0
+              </span>
+            </div>
+
+            <div class="tracker-balance-card__bottom">
+              <div>
+                <span>Available Balance</span>
+                <strong>Personal Finance</strong>
+              </div>
+              <div class="tracker-balance-card__mark">
+                T
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Floating 3D Coin (Bottom Right) -->
+          <img
+            src="assets/coin.png"
+            class="hero-coin hero-coin--one"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <!-- Floating Ambient Sparkles -->
+          <span class="hero-sparkle hero-sparkle--one" aria-hidden="true">✦</span>
+          <span class="hero-sparkle hero-sparkle--two" aria-hidden="true">✧</span>
+          <span class="hero-sparkle hero-sparkle--three" aria-hidden="true">✦</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         OVERVIEW / FINANCIAL SUMMARY
+         ========================================================= -->
+    <section
+      class="tracker-overview"
+      id="overview"
+    >
+
+      <div class="tracker-container">
+
+        <div class="tracker-section-heading">
+
+          <div>
+            <span class="tracker-section-label">
+              OVERVIEW
+            </span>
+
+            <h2>
+              Know where your
+              <em>money goes.</em>
+            </h2>
+          </div>
+
+          <p>
+            Ringkasan kondisi keuanganmu berdasarkan
+            seluruh transaksi yang tercatat.
+          </p>
+
+        </div>
+
+
+        <!-- Summary Cards -->
+        <div class="tracker-summary">
+
+          <!-- Balance -->
+          <article class="tracker-summary__balance">
+
+            <div class="tracker-summary__card-label">
+              CURRENT BALANCE
+            </div>
+
+            <div class="tracker-summary__balance-amount">
+              Rp 0
+            </div>
+
+            <div class="tracker-summary__balance-caption">
+              Saldo saat ini
+            </div>
+
+          </article>
+
+
+          <!-- Income -->
+          <article class="tracker-summary__stat tracker-summary__stat--income">
+
+            <div class="tracker-summary__stat-top">
+
+              <span class="tracker-summary__stat-icon">
+                ↗
+              </span>
+
+              <span>
+                INCOME
+              </span>
+
+            </div>
+
+            <div class="tracker-summary__stat-amount tracker-summary__stat-amount--income">
+              Rp 0
+            </div>
+
+            <p>
+              Total pemasukan
+            </p>
+
+          </article>
+
+
+          <!-- Expense -->
+          <article class="tracker-summary__stat tracker-summary__stat--expense">
+
+            <div class="tracker-summary__stat-top">
+
+              <span class="tracker-summary__stat-icon">
+                ↘
+              </span>
+
+              <span>
+                EXPENSE
+              </span>
+
+            </div>
+
+            <div class="tracker-summary__stat-amount tracker-summary__stat-amount--expense">
+              Rp 0
+            </div>
+
+            <p>
+              Total pengeluaran
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         DECORATIVE WAVE
+         ========================================================= -->
+    <div class="tracker-wave tracker-wave--light" aria-hidden="true">
+      <svg
+        viewBox="0 0 1440 180"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,90
+             C180,160 280,15 470,75
+             C650,135 760,170 930,85
+             C1100,0 1220,35 1440,105
+             L1440,180
+             L0,180 Z"
+        ></path>
+      </svg>
+    </div>
+
+
+    <!-- =========================================================
+         TRANSACTION FORM
+         ========================================================= -->
+    <section
+      class="tracker-form-section"
+      id="transaction-form"
+    >
+
+      <div class="tracker-container">
+
+        <div class="tracker-form-layout">
+
+          <!-- Form introduction -->
+          <div class="tracker-form-intro">
+
+            <span class="tracker-section-label">
+              QUICK ACTION
+            </span>
+
+            <h2>
+              Make every
+              <em>transaction</em>
+              count.
+            </h2>
+
+            <p>
+              Catat transaksi baru agar kondisi keuanganmu
+              tetap terorganisir dan mudah dipantau.
+            </p>
+
+            <div class="tracker-form-decoration">
+              <span>01</span>
+              <span>02</span>
+              <span>03</span>
+            </div>
+
+          </div>
+
+
+          <!-- Transaction Form -->
+          <div class="tracker-form-card">
+
+            <div class="tracker-form-card__header">
+
+              <div>
+                <span class="tracker-form-card__eyebrow">
+                  TRANSACTION
+                </span>
+
+                <h3 id="transactionFormHeading">
+                  Add Transaction
+                </h3>
+              </div>
+
+              <span class="tracker-form-card__number">
+                +01
+              </span>
+
+            </div>
+
+
+            <form
+              id="transactionForm"
+              data-testid="transactionForm"
+            >
+
+              <!-- Title -->
+              <div class="tracker-form-group">
+
+                <label for="transactionFormTitleInput">
+                  Transaction Name
+                </label>
+
+                <input
+                  id="transactionFormTitleInput"
+                  data-testid="transactionFormTitleInput"
+                  type="text"
+                  placeholder="Contoh: Gaji, Makan siang..."
+                  autocomplete="off"
+                >
+
+              </div>
+
+
+              <!-- Amount -->
+              <div class="tracker-form-row">
+
+                <div class="tracker-form-group">
+
+                  <label for="transactionFormAmountInput">
+                    Amount
+                  </label>
+
+                  <input
+                    id="transactionFormAmountInput"
+                    data-testid="transactionFormAmountInput"
+                    type="number"
+                    min="1"
+                    placeholder="0"
+                  >
+
+                </div>
+
+
+                <!-- Date -->
+                <div class="tracker-form-group">
+
+                  <label for="transactionFormDateInput">
+                    Date
+                  </label>
+
+                  <input
+                    id="transactionFormDateInput"
+                    data-testid="transactionFormDateInput"
+                    type="date"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <!-- Type -->
+              <div class="tracker-form-group">
+
+                <label for="transactionFormTypeSelect">
+                  Transaction Type
+                </label>
+
+                <select
+                  id="transactionFormTypeSelect"
+                  data-testid="transactionFormTypeSelect"
+                >
+                  <option value="income">
+                    Income — Pemasukan
+                  </option>
+
+                  <option value="expense">
+                    Expense — Pengeluaran
+                  </option>
+                </select>
+
+              </div>
+
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="tracker-form-submit"
+                data-testid="transactionFormSubmitButton"
+              >
+                <span>Add Transaction</span>
+                <span>↗</span>
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             SEARCH
+             ===================================================== -->
+        <div class="tracker-search">
+
+          <div class="tracker-search__heading">
+
+            <span class="tracker-section-label">
+              FIND TRANSACTION
+            </span>
+
+            <h3>
+              Looking for something?
+            </h3>
+
+          </div>
+
+
+          <form
+            id="searchTransactionForm"
+            data-testid="searchTransactionForm"
+            class="tracker-search__form"
+          >
+
+            <div class="tracker-search__input-wrapper">
+
+              <span class="tracker-search__icon">
+                ⌕
+              </span>
+
+              <input
+                id="searchTransactionFormTitleInput"
+                data-testid="searchTransactionFormTitleInput"
+                type="search"
+                placeholder="Cari transaksi berdasarkan nama..."
+                autocomplete="off"
+              >
+
+            </div>
+
+            <button
+              type="submit"
+              data-testid="searchTransactionFormSubmitButton"
+              class="tracker-search__button"
+            >
+              Search
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         TRANSACTION HISTORY
+         ========================================================= -->
+    <section
+      class="tracker-transactions-section"
+      id="transactions"
+    >
+
+      <!-- Background decoration -->
+      <div class="tracker-transactions__glow"></div>
+
+      <div class="tracker-container">
+
+        <div class="tracker-section-heading tracker-section-heading--light">
+
+          <div>
+
+            <span class="tracker-section-label">
+              TRANSACTION HISTORY
+            </span>
+
+            <h2>
+              Your financial
+              <em>journey.</em>
+            </h2>
+
+          </div>
+
+          <p>
+            Semua transaksi yang telah kamu catat
+            akan tersimpan dan dapat dikelola kembali.
+          </p>
+
+        </div>
+
+
+        <!-- Transaction Columns -->
+        <div class="tracker-transaction-grid">
+
+          <!-- ===================================================
+               INCOME
+               =================================================== -->
+          <section class="tracker-transaction-column">
+
+            <div class="tracker-transaction-column__header">
+
+              <div>
+
+                <span class="tracker-transaction-column__eyebrow">
+                  MONEY IN
+                </span>
+
+                <h3>
+                  Income
+                </h3>
+
+              </div>
+
+              <span class="tracker-transaction-column__icon tracker-transaction-column__icon--income">
+                ↗
+              </span>
+
+            </div>
+
+
+            <div
+              id="incomeList"
+              data-testid="incomeList"
+              class="tracker-transaction-list"
+            >
+              <!-- Transaction income akan dibuat oleh JavaScript -->
+            </div>
+
+          </section>
+
+
+          <!-- ===================================================
+               EXPENSE
+               =================================================== -->
+          <section class="tracker-transaction-column">
+
+            <div class="tracker-transaction-column__header">
+
+              <div>
+
+                <span class="tracker-transaction-column__eyebrow">
+                  MONEY OUT
+                </span>
+
+                <h3>
+                  Expense
+                </h3>
+
+              </div>
+
+              <span class="tracker-transaction-column__icon tracker-transaction-column__icon--expense">
+                ↘
+              </span>
+
+            </div>
+
+
+            <div
+              id="expenseList"
+              data-testid="expenseList"
+              class="tracker-transaction-list"
+            >
+              <!-- Transaction expense akan dibuat oleh JavaScript -->
+            </div>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL CTA
+         ========================================================= -->
+    <section class="tracker-cta">
+
+      <div class="tracker-cta__glow"></div>
+
+      <div class="tracker-container">
+
+        <div class="tracker-cta__content">
+
+          <span class="tracker-section-label">
+            KEEP GOING
+          </span>
+
+          <h2>
+            Small records.
+            <br>
+            <em>Better decisions.</em>
+          </h2>
+
+          <p>
+            Kebiasaan mencatat hari ini dapat membantu
+            membuat keputusan keuangan yang lebih baik.
+          </p>
+
+          <a href="#transaction-form" class="tracker-cta__button">
+            Record a Transaction
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="tracker-footer">
+
+    <div class="tracker-container">
+
+      <div class="tracker-footer__top">
+
+        <div class="tracker-footer__brand">
+
+          <div class="tracker-header__brand">
+            <span class="tracker-header__logo">
+              T
+            </span>
+
+            <span class="tracker-header__brand-name">
+              tracker
+            </span>
+          </div>
+
+          <p>
+            Personal finance,
+            <br>
+            made simple.
+          </p>
+
+        </div>
+
+
+        <div class="tracker-footer__links">
+
+          <div>
+            <span>EXPLORE</span>
+            <a href="#overview">Overview</a>
+            <a href="#transaction-form">Add Transaction</a>
+            <a href="#transactions">History</a>
+          </div>
+
+          <div>
+            <span>PROJECT</span>
+            <p>
+              Personal Finance
+              & Expense Tracker
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="tracker-footer__bottom">
+
+        <span>
+          © 2026 Tracker. Built with HTML, CSS & JavaScript.
+        </span>
+
+        <span>
+          Front-End Web Project
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>
