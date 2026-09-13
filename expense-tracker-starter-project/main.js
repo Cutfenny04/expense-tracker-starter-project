@@ -32,9 +32,7 @@ const balanceAmountEls = document.querySelectorAll('.tracker-summary__balance-am
 const incomeAmountEl = document.querySelector('.tracker-summary__stat-amount--income');
 const expenseAmountEl = document.querySelector('.tracker-summary__stat-amount--expense');
 
-/**
- * Generate unique ID
- */
+
 function generateId() {
   return +new Date();
 }
