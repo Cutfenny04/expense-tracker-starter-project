@@ -21,7 +21,7 @@ const titleInput = document.getElementById('transactionFormTitleInput');
 const amountInput = document.getElementById('transactionFormAmountInput');
 const dateInput = document.getElementById('transactionFormDateInput');
 const typeSelect = document.getElementById('transactionFormTypeSelect');
-const submitButton = transactionForm ? transactionForm.querySelector('button[type="submit"]') : null;
+const submitButton =  document.getElementById('transactionFormSubmitButton');
 const formHeading = document.getElementById('transactionFormHeading');
 const formCard = document.querySelector('.tracker-form-card');
 
@@ -212,9 +212,7 @@ function renderTransactions(listToRender = transactions) {
   });
 }
 
-/**
- * Toggle transaction type ('income' <-> 'expense')
- */
+
 function toggleTransactionType(id) {
   const transaction = transactions.find((t) => t.id === id);
   if (!transaction) return;
@@ -223,9 +221,7 @@ function toggleTransactionType(id) {
   notifyDataChanged();
 }
 
-/**
- * Delete transaction by ID
- */
+
 function deleteTransaction(id) {
   transactions = transactions.filter((t) => t.id !== id);
 
@@ -237,9 +233,7 @@ function deleteTransaction(id) {
   notifyDataChanged();
 }
 
-/**
- * Start editing an existing transaction
- */
+
 function startEditingTransaction(id) {
   const transaction = transactions.find((t) => t.id === id);
   if (!transaction) return;
@@ -281,9 +275,7 @@ function startEditingTransaction(id) {
   }
 }
 
-/**
- * Cancel editing mode and restore form to Add mode
- */
+
 function cancelEditing() {
   editingTransactionId = null;
 
@@ -309,9 +301,7 @@ function cancelEditing() {
   }
 }
 
-/**
- * Handle form submission (Add or Edit)
- */
+
 function handleFormSubmit(e) {
   e.preventDefault();
 
@@ -367,9 +357,7 @@ function handleFormSubmit(e) {
   notifyDataChanged();
 }
 
-/**
- * Search functionality (Kriteria 3)
- */
+
 function handleSearch() {
   if (!searchInput) return;
   const keyword = searchInput.value.trim().toLowerCase();
@@ -385,9 +373,7 @@ function handleSearch() {
   renderTransactions(filtered);
 }
 
-/**
- * Subtle 3D mouse parallax on hero stage
- */
+
 function initHeroParallax() {
   const heroStage = document.getElementById('heroStage');
   if (!heroStage || window.innerWidth < 900) return;
