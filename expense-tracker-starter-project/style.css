@@ -2276,8 +2276,10 @@ select:focus-visible {
     gap: 70px;
   }
 
-  .tracker-hero__visual {
-    justify-content: flex-start;
+  .tracker-hero__visual,
+  .tracker-hero__stage {
+    justify-content: center;
+    margin-inline: auto;
   }
 
   .tracker-balance-card {
