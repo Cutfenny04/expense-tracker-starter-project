@@ -2613,7 +2613,7 @@ select:focus-visible {
 .hero-money {
   position: absolute;
   object-fit: contain;
-  z-index: 6;
+  z-index: 9;
   pointer-events: none;
   filter:
     drop-shadow(0 20px 25px rgba(0, 0, 0, 0.38))
@@ -2622,9 +2622,9 @@ select:focus-visible {
 }
 
 .hero-money--one {
-  width: 220px;
-  top: -25px;
-  left: -40px;
+  width: 100px;
+  top: -30px;
+  left: -70px;
   transform: rotate(-10deg) translateZ(35px);
   animation: moneyFloat 6.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
@@ -2634,18 +2634,19 @@ select:focus-visible {
 ----------------------------------------- */
 .hero-coin {
   position: absolute;
-  object-fit: contain;
-  z-index: 7;
+  width: 125px;
+    height: auto;
+  z-index: 9;
   pointer-events: none;
   filter:
-    drop-shadow(0 25px 25px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 25px 25px rgba(0, 0, 0, 0.28))
     drop-shadow(0 0 25px rgba(205, 224, 225, 0.14));
   will-change: transform;
 }
 
 .hero-coin--one {
-  width: 140px;
-  bottom: -25px;
+  width: 100px;
+  bottom: -75px;
   right: -25px;
   transform: rotate(-8deg) translateZ(45px);
   animation: coinFloat 5.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;

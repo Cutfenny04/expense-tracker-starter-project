@@ -133,7 +133,7 @@ function createTransactionElement(transaction) {
   const amountEl = document.createElement('p');
   amountEl.setAttribute('data-testid', 'transactionItemAmount');
   amountEl.className = 'tracker-transaction-item__amount';
-  amountEl.textContent = `Nominal: Rp${amount}`;
+  amountEl.textContent = `Nominal: ${formatRupiah(amount)}`;
 
   // Date
   const dateEl = document.createElement('p');
@@ -378,9 +378,9 @@ function initHeroParallax() {
   const heroStage = document.getElementById('heroStage');
   if (!heroStage || window.innerWidth < 900) return;
 
-  const money = heroStage.querySelector('.hero-money');
-  const coin = heroStage.querySelector('.hero-coin');
-  const chartCard = heroStage.querySelector('.hero-chart-card');
+  const money = heroStage.querySelector('.hero-money-wrapper');
+  const coin = heroStage.querySelector('.hero-coin-wrapper');
+  const chartCard = heroStage.querySelector('.hero-chart-wrapper');
   const balanceCard = document.getElementById('heroBalanceCard');
 
   heroStage.addEventListener('mousemove', (e) => {
